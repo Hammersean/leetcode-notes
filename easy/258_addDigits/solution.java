@@ -26,13 +26,16 @@ class Solution {
 /*
 class Solution {
     public int addDigits(int num) {
-        while(true) {
-            int num1 = num / 10;
-            int num2 = num % 10;
-            num = num1 + num2;
-            if (num <= 9) break;
+        int sum = num;
+        while(sum >= 10) {
+            num = sum;
+            sum = 0;
+            while(num >= 1) {
+                sum += num % 10;
+                num /= 10;
+            }
         }
-        return num;
+        return sum;
     }
 }
 
